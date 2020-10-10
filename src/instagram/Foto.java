@@ -35,7 +35,7 @@ public class Foto extends Archivo {
 
 	@Override
 	public String toString() {
-		return "Foto - Peso: " + super.getPeso() + " - Alto: " + this.getAlto() + " - Ancho: " + this.getAncho() + "\n Nombre: " + this.getNombre() + this.getExtension();
+		return "FOTO: \n" + "Nombre: " + this.getNombre() + this.getExtension() + " - Peso: " + super.getPeso() + " - Alto: " + this.getAlto() + " - Ancho: " + this.getAncho() ;
 	}
 
 }
