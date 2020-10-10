@@ -25,7 +25,7 @@ public class Video extends Archivo {
 
 	@Override
 	public String toString() {
-		return "Video - Peso: " + super.getPeso() + " - Duracion: " + this.getDuracion() + "\n Nombre: " + this.getNombre() + this.getExtension();
+		return  "VIDEO: \nNombre: " + this.getNombre() + this.getExtension() + " - Peso: " + super.getPeso() + " - Duracion: " + this.getDuracion();
 	}
 	
 	
