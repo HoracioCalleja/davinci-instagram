@@ -28,7 +28,7 @@ public class Usuario {
 		this.mejoresAmigos = new ArrayList<Usuario>();
 		this.seguidores = new ArrayList<Usuario>();
 		this.seguidos = new ArrayList<Usuario>();
-		this.perfil = new Perfil(this.nombre);
+		this.perfil = new Perfil(this.nombreUsuario);
 		this.actividades = new ArrayList<Actividad>();
 		this.explorador = new Explorador();
 		this.feed = new Feed();
@@ -153,8 +153,8 @@ public class Usuario {
 		if (!this.seguidos.contains(usuario)) {
 			System.out.println("No puede dejar de seguir a alguien que no sigue");
 		} else {
-			this.seguidos.add(usuario);
-			usuario.seguidores.add(usuario);
+			this.seguidos.remove(usuario);
+			usuario.seguidores.remove(usuario);
 			System.out.println("Dejando de seguir a " + usuario);
 		}
 	}
@@ -175,7 +175,7 @@ public class Usuario {
 		} else if (!this.mejoresAmigos.contains(usuario)) {
 			System.out.println("No puede eliminar a alguien que no lo está en mejores amigos");
 		} else {
-			this.mejoresAmigos.add(usuario);
+			this.mejoresAmigos.remove(usuario);
 		}
 	}
 
