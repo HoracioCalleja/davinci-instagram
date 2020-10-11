@@ -139,23 +139,43 @@ public class Usuario {
 		this.nombreUsuario = nombreUsuario;
 	}
 
-	public void seguirUsuario(Usuario usuario) {
+	public void seguir(Usuario usuario) {
 		if (this.seguidos.contains(usuario)) {
 			System.out.println("Ya sigue a este usuario");
 		} else {
 			this.seguidos.add(usuario);
 			usuario.seguidores.add(usuario);
-			System.out.println("Comenzando a seguir a "+usuario);
+			System.out.println("Comenzando a seguir a " + usuario);
 		}
 	}
 
 	public void dejarDeSeguir(Usuario usuario) {
-		if(!this.seguidos.contains(usuario)) {
+		if (!this.seguidos.contains(usuario)) {
 			System.out.println("No puede dejar de seguir a alguien que no sigue");
 		} else {
 			this.seguidos.add(usuario);
-			usuario.seguidores.add(usuario);			
-			System.out.println("Dejando de seguir a "+usuario);
+			usuario.seguidores.add(usuario);
+			System.out.println("Dejando de seguir a " + usuario);
+		}
+	}
+
+	public void agregarMejorAmigo(Usuario usuario) {
+		if (this.seguidores.size() < 1) {
+			System.out.println("Aún no tiene seguidores para agregar a mejores amigos");
+		} else if (!this.seguidores.contains(usuario)) {
+			System.out.println("No puede agregar a alguien que no lo sigue");
+		} else {
+			this.mejoresAmigos.add(usuario);
+		}
+	}
+
+	public void eliminarMejorAmigo(Usuario usuario) {
+		if (this.mejoresAmigos.size() < 1) {
+			System.out.println("Aún no tiene seguidores mejores amigos");
+		} else if (!this.mejoresAmigos.contains(usuario)) {
+			System.out.println("No puede eliminar a alguien que no lo está en mejores amigos");
+		} else {
+			this.mejoresAmigos.add(usuario);
 		}
 	}
 
