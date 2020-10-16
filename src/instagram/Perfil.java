@@ -14,6 +14,8 @@ public class Perfil {
 	private String presentacion;
 	private int telefono;
 	private String genero;
+	private boolean historiaActiva;
+	private Historia historia;
 	private List<Publicacion> publicacionesGuardadas = new ArrayList<Publicacion>();;
 	private List<Historia> historiasGuardadas = new ArrayList<Historia>();
 
@@ -107,6 +109,22 @@ public class Perfil {
 
 	public void setHistoriasGuardadas(List<Historia> historiasGuardadas) {
 		this.historiasGuardadas = historiasGuardadas;
+	}
+
+	public Historia getHistoria() {
+		return historia;
+	}
+
+	public void setHistoria(Historia historia) {
+		this.historia = historia;
+	}
+
+	public boolean isHistoriaActiva() {
+		return historiaActiva;
+	}
+
+	public void setHistoriaActiva(boolean historiaActiva) {
+		this.historiaActiva = historiaActiva;
 	}
 
 }

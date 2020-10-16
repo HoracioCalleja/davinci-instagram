@@ -27,11 +27,6 @@ public class Foto extends Archivo {
 		this.alto = alto;
 	}
 
-	@Override
-	public void cargarArchivo() {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public String toString() {

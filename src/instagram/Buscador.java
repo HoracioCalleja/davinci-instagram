@@ -1,5 +1,8 @@
 package instagram;
 
-public class Buscador {
+public interface Buscador {
 
+	public void buscar(String input);
+
+	
 }

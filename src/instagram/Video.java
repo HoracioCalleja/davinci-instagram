@@ -17,11 +17,7 @@ public class Video extends Archivo {
 		this.duracion = duracion;
 	}
 
-	@Override
-	public void cargarArchivo() {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	@Override
 	public String toString() {

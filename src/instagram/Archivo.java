@@ -46,7 +46,7 @@ public abstract class Archivo {
 		this.extension = extension;
 	}
 
-	public abstract void cargarArchivo();
+	
 
 	public abstract String toString();
 }

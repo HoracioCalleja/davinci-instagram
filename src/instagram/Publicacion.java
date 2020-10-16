@@ -3,10 +3,12 @@ package instagram;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 public class Publicacion {
 
 	private Usuario usuario;
+	private int id;
 	private Archivo contenido;
 	private String titulo;
 	private String descripcion;
@@ -24,6 +26,7 @@ public class Publicacion {
 		this.hashtags = new ArrayList<String>();
 		this.meGustas = new ArrayList<Usuario>();
 		this.comentarios = new ArrayList<Comentario>();
+		this.id = new Random().nextInt(255);
 	}
 
 	public Usuario getUsuario() {
@@ -104,6 +107,14 @@ public class Publicacion {
 
 	public void setComentarios(List<Comentario> comentarios) {
 		this.comentarios = comentarios;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 
