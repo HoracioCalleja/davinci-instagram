@@ -10,22 +10,21 @@ public class Historia {
 	
 	
 	//constructor
-	Historia(Usuario usuario, Archivo contenido, int tiempoActivo, String fechaSubida, boolean mejoresAmigos){
+	Historia(Usuario usuario, int tiempoActivo, String fechaSubida, boolean mejoresAmigos){
 		this.usuario = usuario;
-		this.contenido = contenido;
-		this.tiempoActivo = tiempoActivo;
-		this.fechaSubida = fechaSubida;
+		//this.contenido = contenido; -> metodo subirHistoria
+		this.tiempoActivo = tiempoActivo; //en horas
+		//this.fechaSubida = fechaSubida; -> metodo subirHistoria
 		this.mejoresAmigos = mejoresAmigos;
 	}
 	
 	//metodos
-	public void subirHistoria() {
+	public void subirHistoria(Archivo contenido, String fechaSubida) {
 		System.out.println("Historia subida!");
+		
 	}
 	
 	public void crearHistoria() {
-		//quizás se puede crear un objeto "camara" que tenga de metodos grabar o sacar foto
-		//luego lo usamos de parametro, resolveria varias cosas
 		System.out.println("Historia creada!");
 	}
 	
