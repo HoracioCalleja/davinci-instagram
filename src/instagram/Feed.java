@@ -14,36 +14,34 @@ public class Feed {
 
 	}
 
-	public void setUpFeed(Usuario usuario) {
-		this.historias = setUpHistorias(usuario);
-		this.publicaciones = setUpPublicaciones(usuario);
+	public void setUpFeed() {
+		setUpHistorias();
+		this.setUpPublicaciones();
 	}
 
-	private List<Publicacion> setUpPublicaciones(Usuario usuarioSeguido) {
-		List<Publicacion> publicacionesUsuario = new ArrayList<>();
-		for (Usuario seguidos : usuarioSeguido.getSeguidores()) {
+	private void setUpPublicaciones() {
+		for (Usuario seguidos : this.usuario.getSeguidos()) {
 			seguidos.getPerfil().getPublicaciones().stream()
-					.forEach(publicacion -> publicacionesUsuario.add(publicacion));
+					.forEach(publicacion -> this.publicaciones.add(publicacion));
 		}
-		return publicacionesUsuario;
 	}
 
-	private List<Historia> setUpHistorias(Usuario usuarioSeguido) {
-		List<Historia> historiasUsuario = new ArrayList<>();
-		for (Usuario seguidos : usuarioSeguido.getSeguidores()) {
+	private void setUpHistorias() {
+		for (Usuario seguidos : this.usuario.getSeguidos()) {
 			if (seguidos.getPerfil().isHistoriaActiva()) {
-				historiasUsuario.add(seguidos.getPerfil().getHistoria());
+				this.historias.add(seguidos.getPerfil().getHistoria());
 			}
 		}
-		return historiasUsuario;
 	}
-	
-	public List<Publicacion> getPublicaciones (){
+
+	public List<Publicacion> getPublicaciones() {
 		return this.publicaciones;
 	}
-	
-	public String getFeed () {
-		return "";
+
+	public String getFeed() {
+		setUpFeed();
+		System.out.println("Estás en el feed");
+		return "Hisitorias : " + this.historias.toString() + "\nPublicaciones: " + this.publicaciones.toString();
 	}
 
 }

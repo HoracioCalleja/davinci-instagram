@@ -2,30 +2,24 @@ package instagram;
 
 public class Video extends Archivo {
 
-	private int duracion;
-	
-	Video(String nombre, String ubicacion, String extension, int peso, int duracion) {
+	private String duracion;
+
+	Video(String nombre, String ubicacion, String extension, String peso, String duracion) {
 		super(nombre, ubicacion, extension, peso);
 		this.duracion = duracion;
 	}
 
-	public int getDuracion() {
+	public String getDuracion() {
 		return duracion;
 	}
 
-	public void setDuracion(int duracion) {
+	public void setDuracion(String duracion) {
 		this.duracion = duracion;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return  "VIDEO: \nNombre: " + this.getNombre() + this.getExtension() + " - Peso: " + super.getPeso() + " - Duracion: " + this.getDuracion();
+		return super.toString() + "\nVIDEO" + "\nDuracion: " + this.getDuracion();
 	}
-	
-	
-	
-	
-	
+
 }

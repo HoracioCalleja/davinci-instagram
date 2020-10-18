@@ -3,6 +3,8 @@ package instagram;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 public class Usuario {
 
 	private String nombre;
@@ -30,8 +32,8 @@ public class Usuario {
 		this.seguidos = new ArrayList<Usuario>();
 		this.perfil = new Perfil(this.nombreUsuario);
 		this.actividades = new ArrayList<Actividad>();
-		this.explorador = new Explorador();
-		this.feed = new Feed();
+		this.explorador = new Explorador(this);
+		this.feed = new Feed(this);
 		this.chats = new ArrayList<Chat>();
 	}
 
@@ -84,7 +86,7 @@ public class Usuario {
 	}
 
 	public Feed getFeed() {
-		return feed;
+		return this.feed;
 	}
 
 	public void setFeed(Feed feed) {
@@ -145,7 +147,7 @@ public class Usuario {
 		} else {
 			this.seguidos.add(usuario);
 			usuario.seguidores.add(usuario);
-			System.out.println("Comenzando a seguir a " + usuario);
+			System.out.println("Comenzando a seguir a " + usuario.getNombreUsuario());
 		}
 	}
 
@@ -178,5 +180,58 @@ public class Usuario {
 			this.mejoresAmigos.remove(usuario);
 		}
 	}
+
+	public Archivo crearContenido() {
+
+		String opcion;
+		do {
+			opcion = JOptionPane.showInputDialog("¿Foto o video? \n1 - Foto\n2 - Video\n3 - Salir");
+			if (!opcion.equals("1") && !opcion.equals("2") && !opcion.equals("3")) {
+				JOptionPane.showMessageDialog(null, "Ingrese:\n1 -> para foto\n2 -> para video\n3 -> para salir");
+			} else {
+				if (opcion.equals("3")) {
+					JOptionPane.showMessageDialog(null, "Cancelando la creación de contenido...");
+					return null;
+				}
+				String nombre = JOptionPane.showInputDialog("Nombre del archivo: ");
+				String ubicacion = JOptionPane.showInputDialog("Ubicacion (ej : galeria/amigos): ");
+				String extension = JOptionPane.showInputDialog("Extension (ej: .jpg - .mp4): ");
+				String peso = JOptionPane.showInputDialog("Peso (ej: 123kb): ");
+				switch (opcion) {
+				case "1":
+					String alto = JOptionPane.showInputDialog("Alto (ej: 123px): ");
+					String ancho = JOptionPane.showInputDialog("Ancho (ej: 123px): ");
+					Archivo foto = new Foto(nombre, ubicacion, extension, peso, ancho, alto);
+					System.out.println(foto.toString());
+					return foto;
+				case "2":
+					String duracion = JOptionPane.showInputDialog("Duracion del video: ");
+					Archivo video = new Video(nombre, ubicacion, extension, peso, duracion);
+					System.out.println(video.toString());
+					return video;
+
+				default:
+					break;
+				}
+			}
+		} while (!opcion.equals("3"));
+
+		return null;
+
+	}
+	
+	
+	public Publicacion crearPublicacion(Archivo contenido) {
+		Publicacion publicacion = new Publicacion(this, contenido);
+		publicacion.configurarPublicacion();
+		System.out.println(publicacion.toString());
+		return publicacion;
+	}
+	
+	public void subirPublicacion(Publicacion publicacion) {
+		this.perfil.subirPublicacion(publicacion);
+	}
+	
+	
 
 }

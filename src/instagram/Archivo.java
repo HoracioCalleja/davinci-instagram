@@ -2,23 +2,23 @@ package instagram;
 
 public abstract class Archivo {
 
-	int peso;
+	String peso;
 	String nombre;
 	String ubicacion;
 	String extension;
 
-	Archivo(String nombre, String ubicacion, String extension, int peso) {
+	Archivo(String nombre, String ubicacion, String extension, String peso) {
 		this.nombre = nombre;
 		this.extension = extension;
 		this.peso = peso;
 		this.ubicacion = ubicacion;
 	}
 
-	public int getPeso() {
+	public String getPeso() {
 		return peso;
 	}
 
-	public void setPeso(int peso) {
+	public void setPeso(String peso) {
 		this.peso = peso;
 	}
 
@@ -47,6 +47,8 @@ public abstract class Archivo {
 	}
 
 	
-
-	public abstract String toString();
+	@Override
+	public String toString() {
+		return "Archivo: Nombre: " + this.getNombre() + this.getExtension() + " - Peso: " + this.getPeso();
+	}
 }

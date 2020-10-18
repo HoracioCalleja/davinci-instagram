@@ -2,35 +2,34 @@ package instagram;
 
 public class Foto extends Archivo {
 
-	private int ancho;
-	private int alto;
+	private String ancho;
+	private String alto;
 
-	Foto(String nombre, String ubicacion, String extension, int peso, int ancho, int alto) {
+	Foto(String nombre, String ubicacion, String extension, String peso, String ancho, String alto) {
 		super(nombre, ubicacion, extension, peso);
 		this.ancho = ancho;
 		this.alto = alto;
 	}
 
-	public int getAncho() {
+	public String getAncho() {
 		return ancho;
 	}
 
-	public void setAncho(int ancho) {
+	public void setAncho(String ancho) {
 		this.ancho = ancho;
 	}
 
-	public int getAlto() {
+	public String getAlto() {
 		return alto;
 	}
 
-	public void setAlto(int alto) {
+	public void setAlto(String alto) {
 		this.alto = alto;
 	}
 
-
 	@Override
 	public String toString() {
-		return "FOTO: \n" + "Nombre: " + this.getNombre() + this.getExtension() + " - Peso: " + super.getPeso() + " - Alto: " + this.getAlto() + " - Ancho: " + this.getAncho() ;
+		return super.toString() + "\nFOTO" + "\nAlto: " + this.getAlto() + "\nAncho: " + this.getAncho();
 	}
 
 }

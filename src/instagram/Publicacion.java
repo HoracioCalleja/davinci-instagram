@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 public class Publicacion {
 
 	private Usuario usuario;
@@ -19,14 +21,22 @@ public class Publicacion {
 	private List<Usuario> meGustas;
 	private List<Comentario> comentarios;
 
-
-	Publicacion(Usuario usuario) {
+	Publicacion(Usuario usuario, Archivo contenido) {
 		this.usuario = usuario;
 		this.etiquetas = new ArrayList<Usuario>();
 		this.hashtags = new ArrayList<String>();
 		this.meGustas = new ArrayList<Usuario>();
 		this.comentarios = new ArrayList<Comentario>();
 		this.id = new Random().nextInt(255);
+		this.contenido = contenido;
+	}
+
+	@Override
+	public String toString() {
+		return "Publicacion de " + usuario.getNombreUsuario() + "\nContenido: " + this.contenido.toString()
+				+ "\nTitulo : " + this.getTitulo() + "\nDescripcion : " + this.getDescripcion()
+				+ "\nCantidad de 'me gusta': " + this.getMeGustas().size() + "\nCantidad de comentarios: "
+				+ this.getComentarios().size();
 	}
 
 	public Usuario getUsuario() {
@@ -117,5 +127,33 @@ public class Publicacion {
 		this.id = id;
 	}
 
+	public void configurarPublicacion() {
+		String opcion = "";
+		do {
+			opcion = JOptionPane.showInputDialog(
+					"Elija entre las siguientes opciones:\n1 - Titulo\n2 - Descripcion\n3 - Ubicacion\n4 para finalizar la creación de la publicacion");
+			if (!opcion.equalsIgnoreCase("4")) {
+				switch (opcion) {
+				case "1":
+					String titulo = JOptionPane.showInputDialog("Ingrese el titulo: ");
+					this.setTitulo(titulo);
+					break;
+				case "2":
+					String descripcion = JOptionPane.showInputDialog("Ingrese una descripcion: ");
+					this.setDescripcion(descripcion);
+					break;
+				case "3":
+					String ubicacion = JOptionPane.showInputDialog("Ingrese una ubicación: ");
+					this.setUbicacion(ubicacion);
+					break;
+
+				default:
+					break;
+				}
+			}
+
+		} while (!opcion.equals("4"));
+
+	}
 
 }

@@ -127,4 +127,8 @@ public class Perfil {
 		this.historiaActiva = historiaActiva;
 	}
 
+	public void subirPublicacion(Publicacion publicacion) {
+		this.publicaciones.add(publicacion);
+	}
+	
 }
