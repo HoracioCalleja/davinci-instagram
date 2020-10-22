@@ -20,13 +20,17 @@ public class Main {
 	
 	
 	
+	
+	
 	System.out.println(horacio.getFeed());
 	
 	Archivo contenido = horacio.crearContenido();
 	
 	Publicacion publicacion = horacio.crearPublicacion(contenido);
 	
-	publicacion.subirPublicacion();
+	horacio.configurarPublicacion(publicacion);
+	
+	horacio.subirPublicacion(publicacion);
 	
 	
 	System.out.println(carlos.getFeed()); 

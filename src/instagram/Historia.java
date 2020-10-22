@@ -18,6 +18,14 @@ public class Historia {
 		this.mejoresAmigos = mejoresAmigos;
 	}
 	
+	public Usuario getUsuario() {
+		return this.usuario;
+	}
+	
+	public Archivo getContenido() {
+		return this.contenido;
+	}
+	
 	//metodos
 	public void subirHistoria(Archivo contenido, String fechaSubida) {
 		System.out.println("Historia subida!");

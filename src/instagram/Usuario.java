@@ -224,11 +224,17 @@ public class Usuario {
 	public Publicacion crearPublicacion(Archivo contenido) {
 		Publicacion publicacion = new Publicacion(this, contenido);
 		publicacion.configurarPublicacion();
-		System.out.println(publicacion.toString());
+		System.out.println("Publicacion creada: " + publicacion.toString());
 		return publicacion;
 	}
 	
+	public void configurarPublicacion (Publicacion publicacion) {
+		publicacion.configurarPublicacion();
+	}
 	
+	public void subirPublicacion (Publicacion publicacion) {
+		this.perfil.subirPublicacion(publicacion);
+	}
 	
 
 }
