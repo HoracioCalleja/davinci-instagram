@@ -85,8 +85,8 @@ public class Usuario {
 		this.explorador = explorador;
 	}
 
-	public Feed getFeed() {
-		return this.feed;
+	public String getFeed() {
+		return this.feed.getFeed();
 	}
 
 	public void setFeed(Feed feed) {
@@ -228,9 +228,6 @@ public class Usuario {
 		return publicacion;
 	}
 	
-	public void subirPublicacion(Publicacion publicacion) {
-		this.perfil.subirPublicacion(publicacion);
-	}
 	
 	
 

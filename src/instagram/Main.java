@@ -26,9 +26,10 @@ public class Main {
 	
 	Publicacion publicacion = horacio.crearPublicacion(contenido);
 	
-	horacio.subirPublicacion(publicacion);
+	publicacion.subirPublicacion();
 	
-	System.out.println(carlos.getFeed().getFeed()); 
+	
+	System.out.println(carlos.getFeed()); 
 	
 	}
 

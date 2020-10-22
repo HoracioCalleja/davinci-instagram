@@ -156,4 +156,11 @@ public class Publicacion {
 
 	}
 
+
+	public void subirPublicacion() {
+		this.usuario.getPerfil().subirPublicacion(this);
+	}
+	
+	
+
 }

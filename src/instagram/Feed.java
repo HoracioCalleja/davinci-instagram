@@ -16,7 +16,7 @@ public class Feed {
 
 	public void setUpFeed() {
 		setUpHistorias();
-		this.setUpPublicaciones();
+		setUpPublicaciones();
 	}
 
 	private void setUpPublicaciones() {
