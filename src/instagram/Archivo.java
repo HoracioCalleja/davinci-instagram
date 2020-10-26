@@ -49,6 +49,6 @@ public abstract class Archivo {
 	
 	@Override
 	public String toString() {
-		return "Archivo: Nombre: " + this.getNombre() + this.getExtension() + " - Peso: " + this.getPeso();
+		return "Archivo: \nNombre: " + this.getNombre() + this.getExtension() + " - Peso: " + this.getPeso();
 	}
 }

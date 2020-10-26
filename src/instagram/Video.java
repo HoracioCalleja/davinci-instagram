@@ -19,7 +19,7 @@ public class Video extends Archivo {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nVIDEO" + "\nDuracion: " + this.getDuracion();
+		return super.toString() + "\nTipo: VIDEO" + "\nDuracion: " + this.getDuracion();
 	}
 
 }

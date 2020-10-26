@@ -20,6 +20,7 @@ public class Usuario {
 	private Explorador explorador;
 	private Feed feed;
 	private List<Chat> chats;
+	private List<Archivo> historias;
 
 	Usuario(String nombre, String apellido, String email, String contrasenia, String nombreUsuario) {
 		this.nombre = nombre;
@@ -230,6 +231,14 @@ public class Usuario {
 	
 	public void subirPublicacion(Publicacion publicacion) {
 		this.perfil.subirPublicacion(publicacion);
+	}
+
+	public List<Historia> getHistorias(Usuario usuario) {
+		return usuario.historias;
+	}
+
+	public void setHistorias(Usuario usuario, Archivo contenido) {
+		usuario.historias.add(contenido);
 	}
 	
 	

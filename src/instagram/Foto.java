@@ -29,7 +29,7 @@ public class Foto extends Archivo {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nFOTO" + "\nAlto: " + this.getAlto() + "\nAncho: " + this.getAncho();
+		return super.toString() + "\nTipo: FOTO" + "\nAlto: " + this.getAlto() + "\nAncho: " + this.getAncho();
 	}
 
 }

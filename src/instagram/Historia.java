@@ -10,7 +10,7 @@ public class Historia {
 	
 	
 	//constructor
-	Historia(Usuario usuario, int tiempoActivo, String fechaSubida, boolean mejoresAmigos){
+	Historia(Usuario usuario, int tiempoActivo, boolean mejoresAmigos){
 		this.usuario = usuario;
 		//this.contenido = contenido; -> metodo subirHistoria
 		this.tiempoActivo = tiempoActivo; //en horas
@@ -19,13 +19,22 @@ public class Historia {
 	}
 	
 	//metodos
-	public void subirHistoria(Archivo contenido, String fechaSubida) {
-		System.out.println("Historia subida!");
+	
+	// subirHistoria pide un archivo del dispositivo, crearHistoria abre la camara en la app.
+	public void subirHistoria(Usuario usuario, Archivo contenido, String fechaSubida) {
+		
+		System.out.println("Subiendo...");
+		String nombre = usuario.getNombreUsuario();
+		usuario.setHistorias(usuario, contenido);
+		System.out.println("El usuario: "+nombre+" subió nuevo contenido en sus historias.");
 		
 	}
 	
-	public void crearHistoria() {
-		System.out.println("Historia creada!");
+	public void crearHistoria(Usuario usuario, Archivo contenido) {
+		String fecha = "18/10/2020"; //crear nueva fecha
+		String cont = contenido.toString();
+		System.out.println("¡Historia creada!\n"+cont);
+		subirHistoria(usuario, contenido, fecha);
 	}
 	
 	public void contestarHistoria() {
