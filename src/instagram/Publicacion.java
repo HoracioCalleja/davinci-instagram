@@ -12,10 +12,10 @@ public class Publicacion {
 	private Usuario usuario;
 	private int id;
 	private Archivo contenido;
-	private String titulo;
-	private String descripcion;
+	private String titulo = "Sin titulo";
+	private String descripcion = "Sin descripcion";
 	private List<Usuario> etiquetas;
-	private String ubicacion;
+	private String ubicacion = "Sin ubicacion";
 	private Date fechaPublicada;
 	private List<String> hashtags;
 	private List<Usuario> meGustas;
@@ -127,6 +127,8 @@ public class Publicacion {
 		this.id = id;
 	}
 
+	
+	
 	public void configurarPublicacion() {
 		String opcion = "";
 		do {

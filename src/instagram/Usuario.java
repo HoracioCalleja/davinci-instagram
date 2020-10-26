@@ -86,8 +86,8 @@ public class Usuario {
 		this.explorador = explorador;
 	}
 
-	public Feed getFeed() {
-		return this.feed;
+	public String getFeed() {
+		return this.feed.getFeed();
 	}
 
 	public void setFeed(Feed feed) {
@@ -225,12 +225,12 @@ public class Usuario {
 	public Publicacion crearPublicacion(Archivo contenido) {
 		Publicacion publicacion = new Publicacion(this, contenido);
 		publicacion.configurarPublicacion();
-		System.out.println(publicacion.toString());
+		System.out.println("Publicacion creada: " + publicacion.toString());
 		return publicacion;
 	}
 	
-	public void subirPublicacion(Publicacion publicacion) {
-		this.perfil.subirPublicacion(publicacion);
+	public void configurarPublicacion (Publicacion publicacion) {
+		publicacion.configurarPublicacion();
 	}
 
 	public List<Historia> getHistorias(Usuario usuario) {
@@ -241,6 +241,9 @@ public class Usuario {
 		usuario.historias.add(contenido);
 	}
 	
+	public void subirPublicacion (Publicacion publicacion) {
+		this.perfil.subirPublicacion(publicacion);
+	}
 	
 
 }

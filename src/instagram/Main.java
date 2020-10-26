@@ -28,15 +28,30 @@ public class Main {
 	
 	
 	
+<<<<<<< HEAD
 	//System.out.println(horacio.getFeed());
+=======
+	
+	
+	System.out.println(horacio.getFeed());
+>>>>>>> d988410ac4c63bcac99f45412d7c56bf81e86e7c
 	
 	//Archivo contenido = horacio.crearContenido();
 	
 	//Publicacion publicacion = horacio.crearPublicacion(contenido);
 	
+<<<<<<< HEAD
 	//horacio.subirPublicacion(publicacion);
 	
 	//System.out.println(carlos.getFeed().getFeed()); 
+=======
+	horacio.configurarPublicacion(publicacion);
+	
+	horacio.subirPublicacion(publicacion);
+	
+	
+	System.out.println(carlos.getFeed()); 
+>>>>>>> d988410ac4c63bcac99f45412d7c56bf81e86e7c
 	
 	}
 

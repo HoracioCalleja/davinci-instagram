@@ -18,6 +18,14 @@ public class Historia {
 		this.mejoresAmigos = mejoresAmigos;
 	}
 	
+	public Usuario getUsuario() {
+		return this.usuario;
+	}
+	
+	public Archivo getContenido() {
+		return this.contenido;
+	}
+	
 	//metodos
 	
 	// subirHistoria pide un archivo del dispositivo, crearHistoria abre la camara en la app.
