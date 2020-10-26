@@ -228,18 +228,7 @@ public class Usuario {
 		System.out.println("Publicacion creada: " + publicacion.toString());
 		return publicacion;
 	}
-	
-	public void configurarPublicacion (Publicacion publicacion) {
-		publicacion.configurarPublicacion();
-	}
 
-	public List<Historia> getHistorias(Usuario usuario) {
-		return usuario.historias;
-	}
-
-	public void setHistorias(Usuario usuario, Archivo contenido) {
-		usuario.historias.add(contenido);
-	}
 	
 	public void subirPublicacion (Publicacion publicacion) {
 		this.perfil.subirPublicacion(publicacion);
