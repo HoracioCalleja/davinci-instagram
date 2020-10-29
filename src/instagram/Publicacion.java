@@ -127,13 +127,15 @@ public class Publicacion {
 		this.id = id;
 	}
 
-	
-	
+	private void anadirComentario(Comentario comentario) {
+		this.comentarios.add(comentario);
+	}
+
 	public void configurarPublicacion() {
 		String opcion = "";
 		do {
 			opcion = JOptionPane.showInputDialog(
-					"Elija entre las siguientes opciones:\n1 - Titulo\n2 - Descripcion\n3 - Ubicacion\n4 para finalizar la creación de la publicacion");
+					"Elija entre las siguientes opciones:\n1 - Titulo\n2 - Descripcion\n3 - Ubicacion\n4 - para finalizar la creación de la publicacion");
 			if (!opcion.equalsIgnoreCase("4")) {
 				switch (opcion) {
 				case "1":
@@ -155,6 +157,27 @@ public class Publicacion {
 			}
 
 		} while (!opcion.equals("4"));
+
+	}
+
+	public void comentar(Usuario usuario, String mensaje) {
+		Comentario comentario = new Comentario(usuario, mensaje);
+		this.anadirComentario(comentario);
+	}
+
+	public void darMeGusta(Usuario usuario) {
+		this.meGustas.add(usuario);
+	}
+
+	public String verComentarios() {
+		if (this.comentarios.isEmpty()) {
+			return "No hay comentarios en esta publicación";
+		}
+		String todosLosComentarios = "";
+		for (Comentario comentario : this.comentarios) {
+			todosLosComentarios += comentario.toString();
+		}
+		return "COMENTARIOS: \n -------------------------" + todosLosComentarios + "\n -------------------------";
 
 	}
 

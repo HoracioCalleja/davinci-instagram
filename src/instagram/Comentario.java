@@ -1,16 +1,18 @@
 package instagram;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Comentario {
 
 	private Usuario enviadoPor;
-	private Date fechaEnviada;
+//	private Date fechaEnviada;
 	private String mensaje;
-	private List<Usuario> meGustas;
+	private List<Usuario> meGustas = new ArrayList<Usuario>();
 
-	Comentario(Usuario enviadoPor) {
+	Comentario(Usuario enviadoPor, String mensaje) {
+		this.mensaje = mensaje;
 		this.enviadoPor = enviadoPor;
 	}
 
@@ -22,13 +24,13 @@ public class Comentario {
 		this.enviadoPor = enviadoPor;
 	}
 
-	public Date getFechaEnviada() {
-		return fechaEnviada;
-	}
-
-	public void setFechaEnviada(Date fechaEnviada) {
-		this.fechaEnviada = fechaEnviada;
-	}
+//	public Date getFechaEnviada() {
+//		return fechaEnviada;
+//	}
+//
+//	public void setFechaEnviada(Date fechaEnviada) {
+//		this.fechaEnviada = fechaEnviada;
+//	}
 
 	public String getMensaje() {
 		return mensaje;
@@ -44,6 +46,10 @@ public class Comentario {
 
 	public void setMeGustas(List<Usuario> meGustas) {
 		this.meGustas = meGustas;
+	}
+
+	public String toString() {
+		return "\nEnviado por: " + this.enviadoPor.getNombreUsuario() + "\nMensaje: " + this.mensaje + "\nMe gustas: " + meGustas.size();
 	}
 
 }

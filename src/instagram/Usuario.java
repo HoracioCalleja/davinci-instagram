@@ -182,7 +182,7 @@ public class Usuario {
 		}
 	}
 
-	public Archivo crearContenido() {
+	private Archivo crearContenido() {
 
 		String opcion;
 		do {
@@ -191,7 +191,7 @@ public class Usuario {
 				JOptionPane.showMessageDialog(null, "Ingrese:\n1 -> para foto\n2 -> para video\n3 -> para salir");
 			} else {
 				if (opcion.equals("3")) {
-					JOptionPane.showMessageDialog(null, "Cancelando la creación de contenido...");
+					JOptionPane.showMessageDialog(null, "CANCELANDO LA CREACION DE CONTENIDO...");
 					return null;
 				}
 				String nombre = JOptionPane.showInputDialog("Nombre del archivo: ");
@@ -222,10 +222,11 @@ public class Usuario {
 	}
 	
 	
-	public Publicacion crearPublicacion(Archivo contenido) {
+	public Publicacion crearPublicacion() {
+		Archivo contenido = crearContenido();
 		Publicacion publicacion = new Publicacion(this, contenido);
 		publicacion.configurarPublicacion();
-		System.out.println("Publicacion creada: " + publicacion.toString());
+		System.out.println("PUBLICACION CREADA: \n" + publicacion.toString());
 		return publicacion;
 	}
 

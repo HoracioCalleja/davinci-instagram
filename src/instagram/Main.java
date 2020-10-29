@@ -8,17 +8,19 @@ public class Main {
 		Usuario carlos = new Usuario("Carlos", "Lopez", "carlos@hotmail.com", "asdasd123123", "carlitos");
 
 		Usuario cristian = new Usuario("Cristian", "Del Canto", "cristiandelcanto880@gmail.com", "mipass22", "Cris007");
-		
 
 		carlos.seguir(horacio);
 		horacio.seguir(carlos);
 
-
-		Archivo contenido = horacio.crearContenido();
-
-		Publicacion publicacion = horacio.crearPublicacion(contenido);
+		Publicacion publicacion = horacio.crearPublicacion();
 
 		horacio.subirPublicacion(publicacion);
+
+		publicacion.darMeGusta(carlos);
+
+		publicacion.comentar(carlos, "Linda foto horacito");
+
+		System.out.println(publicacion.verComentarios());
 
 		System.out.println(carlos.getFeed());
 

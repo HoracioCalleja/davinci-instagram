@@ -40,8 +40,7 @@ public class Feed {
 
 	public String getFeed() {
 		setUpFeed();
-		System.out.println("Estás en el feed");
-		return "Hisitorias : " + this.historias.toString() + "\nPublicaciones: " + this.publicaciones.toString();
+		return "FEED \n -------------------- \nHistorias : " + this.historias.toString() + "\nPublicaciones: " + this.publicaciones.toString() + "\n --------------------";
 	}
 
 }
