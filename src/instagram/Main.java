@@ -7,7 +7,6 @@ public class Main {
 		Usuario horacio = new Usuario("Horacio", "Calleja", "callejah@hotmail.com", "asdasd123123", "horacito");
 		Usuario carlos = new Usuario("Carlos", "Lopez", "carlos@hotmail.com", "asdasd123123", "carlitos");
 
-		Usuario cristian = new Usuario("Cristian", "Del Canto", "cristiandelcanto880@gmail.com", "mipass22", "Cris007");
 
 		carlos.seguir(horacio);
 		horacio.seguir(carlos);

@@ -11,10 +11,9 @@ public class Feed {
 
 	public Feed(Usuario usuario) {
 		this.usuario = usuario;
-
 	}
 
-	public void setUpFeed() {
+	private void setUpFeed() {
 		setUpHistorias();
 		setUpPublicaciones();
 	}
