@@ -20,7 +20,7 @@ public class Usuario {
 	private Explorador explorador;
 	private Feed feed;
 	private List<Chat> chats;
-	private List<Archivo> historias;
+	private List<Historia> historias;
 
 	Usuario(String nombre, String apellido, String email, String contrasenia, String nombreUsuario) {
 		this.nombre = nombre;
@@ -36,6 +36,7 @@ public class Usuario {
 		this.explorador = new Explorador(this);
 		this.feed = new Feed(this);
 		this.chats = new ArrayList<Chat>();
+		this.historias = new ArrayList<Historia>();
 	}
 
 	public List<Usuario> getMejoresAmigos() {
@@ -220,8 +221,7 @@ public class Usuario {
 		return null;
 
 	}
-	
-	
+
 	public Publicacion crearPublicacion() {
 		Archivo contenido = crearContenido();
 		Publicacion publicacion = new Publicacion(this, contenido);
@@ -230,10 +230,16 @@ public class Usuario {
 		return publicacion;
 	}
 
-	
-	public void subirPublicacion (Publicacion publicacion) {
+	public void subirPublicacion(Publicacion publicacion) {
 		this.perfil.subirPublicacion(publicacion);
 	}
-	
+
+	public List<Historia> getHistorias() {
+		return historias;
+	}
+
+	public void setHistorias(List<Historia> historias) {
+		this.historias = historias;
+	}
 
 }
